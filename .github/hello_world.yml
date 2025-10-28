@@ -16,3 +16,11 @@ jobs:
       - name: Hello World Step
         run: echo "Hello, World!"
         shell: bash
+
+  goodbye_world_job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Goodbye World Step
+        run: echo "Goodbye, World!"
+        shell: bash
