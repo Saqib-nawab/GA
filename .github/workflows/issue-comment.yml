@@ -1,0 +1,20 @@
+name : comment on a new issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  issue_comment_job:
+    name: Issue Comment Job
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Comment on Issue
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Thank you for opening this issue! We will look into it as soon as possible.
+          reactions: 'heart'
