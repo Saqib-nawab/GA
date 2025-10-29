@@ -1,8 +1,12 @@
-name : comment on a new issue
+name: comment on a new issue
 
 on:
   issues:
     types: [opened]
+
+permissions:
+  contents: read
+  issues: write
 
 jobs:
   issue_comment_job:
